@@ -15,7 +15,6 @@ body{
 /* Notification main background box */
 .notification{
 	content: "";
-	background-color: #FB3A3A;
 	margin: 10px 15px 10px 15px;
 	height: 50px;
 	width: 97.5%;

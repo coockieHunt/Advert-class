@@ -3,7 +3,10 @@ include_once('class/notifcation.class.php');
 
 $notifcation = new notification;
 
-$notifcation->puch('succes', 'auto',  'hello wolrd');
+$notifcation->puch('succes' , null, 'hello wolrd');
+$notifcation->puch('info' , null, 'Hello wolrd');
+$notifcation->puch('warning' , null, 'Hello wolrd');
+$notifcation->puch('danger' , null, 'Hello wolrd');
 //$notifcation->	
 ?>
 <html>
