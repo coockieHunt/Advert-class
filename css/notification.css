@@ -4,13 +4,10 @@
 */
 
 /* Personalisation of the demo page */
-
 body{
 	background-color: #545454;
 }
-
 /* END */
-
 
 /* Notification main background box */
 .notification{
@@ -25,8 +22,6 @@ body{
 	padding-left: 10px;
 	float: 	left;
 }
-
-
 /* END */
 
 .notification > strong{

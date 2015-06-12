@@ -18,23 +18,26 @@ class notification
 
 	public function puch($type = 'null', $keyword ='null', $text){
 		
+
+		// Hydrate function//
 		$text = ucfirst($text);
 
 		$this->set_type($type);
 		$this->set_keyword($keyword); 
 		$this->set_text($text);
 
+		// If the type of notification is not specified then she pressed a succes //
 		if (is_null($this->_type)) {
 			$type = 'succes';
 		}
 
-
+		// If not keyword then they will not specify the type valer //
 		if (is_null($this->_keyword)) {
 			$keyword = $type;
 			$keyword = ucfirst($keyword);
 		}
 
-
+		// Send the notification with these parameter //
 		switch ($type) {
 			case 'succes':
 				$this->initmodel($this->_type, $this->_keyword = $keyword, $this->_text = $text,  $color = $this->_color_succes  );		
@@ -58,10 +61,13 @@ class notification
 		}
 	}
 
+
 	private function initmodel($type ='null', $keyword = 'null', $text, $color){
-		echo "<div class='notification' style='background-color:". $color ."'><strong>". $this->_keyword ." </strong><span>" . $this->_text . "</span><a href='#''><i class='fa fa-times'></i></a></div>";
+		echo "<div class='notification animated bounceInDown '  id='hide' style='background-color:". $color ."'><strong>". $this->_keyword ." </strong><span>" . $this->_text . "</span><a href='#' onclick='cacher()'><i class='fa fa-times'></i></a></div>";
 	}
 
+
+	// Setter end Getter //
 
 	private function set_type($type){
 		 return $this->_type = $type;
