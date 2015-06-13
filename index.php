@@ -1,14 +1,14 @@
 <?php 
 include_once('class/notifcation.class.php'); 
 
-$notifcation = new notification;
+$advert = new lib\advert\advert;
 
-$notifcation->puch('succes' , null, 'hello wolrd');
-$notifcation->puch('info' , null, 'Hello wolrd');
-$notifcation->puch('warning' , null, 'Hello wolrd');
-$notifcation->puch('danger' , null, 'Hello wolrd');
+$advert->addcolor('admin','#2446F2');
 
-	
+$advert->push('Succes', 'auto', 'hello world');
+
+
+//$advert->debug();	
 ?>
 <html>
 	<head>
