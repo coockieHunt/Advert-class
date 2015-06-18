@@ -1,1 +1,6 @@
+# composer ignore
 /vendor/
+
+
+# windows ignore composer  
+composer.bat
