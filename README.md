@@ -76,35 +76,5 @@ Change style advert :
 
 Create new theme
 -------------
-edit file asset/css/advert.css
-
-    .advert_top{
-	height: 50px;
-	width: 100%;
-	line-height: 50px;
-	color: white;
-	float: 	left;
-}
-
-.advert_top > strong{
-	font-size: 	1.2em;
-	font-family: 'Open Sans';
-	padding-left: 	10px;
-}
-
-.advert_top >.advert{
-	float: 	right;
-	line-height: 50px;
-	margin-right: 20px;
-	text-align:left;
-	display:block;
-	height: 50px;
-	margin:16px 25px 0 0;
-	cursor: pointer;
-	
-}
-
-.advert_top >.advert:hover{
-	font-size: 	1.1em;
-}
-
+ 1. edit file asset/css/advert.css
+ 2. add lib/advert.class.php in  array $_style name of theme en main class css
