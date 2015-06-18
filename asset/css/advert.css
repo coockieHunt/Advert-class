@@ -1,0 +1,68 @@
+/* Jonathan gleyze
+   v1.0 
+   License: none (public domain)
+*/
+
+/* Personalisation of the demo page */
+body{
+	background-color: #545454;
+	margin: 0; padding: 0;
+}
+
+/* Notification main background box */
+.notification{
+	height: 50px;
+	width: 95%;
+	border-radius: 5px;
+	line-height: 50px;
+	box-shadow: 1px 1px 12px #555;
+	color: white;
+	float: 	left;
+	margin: 10px 35px 0 35px;
+	opacity: 1.0;
+}
+
+.notification > strong{
+	font-size: 	1.2em;
+	font-family: 'Open Sans';
+	padding-left: 	10px;
+}
+
+.notification >.advert{
+	float: 	right;
+	line-height: 50px;
+	margin-right: 20px;
+	text-align:left;
+	display:block;
+	height: 50px;
+	margin:16px 25px 0 0;
+	cursor: pointer;
+	
+}
+
+
+.notification_two{
+	height: 50px;
+	width: 100%;
+	line-height: 50px;
+	color: white;
+	float: 	left;
+}
+
+.notification_two > strong{
+	font-size: 	1.2em;
+	font-family: 'Open Sans';
+	padding-left: 	10px;
+}
+
+.notification_two >.advert{
+	float: 	right;
+	line-height: 50px;
+	margin-right: 20px;
+	text-align:left;
+	display:block;
+	height: 50px;
+	margin:16px 25px 0 0;
+	cursor: pointer;
+	
+}
