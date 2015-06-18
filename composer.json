@@ -1,0 +1,13 @@
+{
+    "name": "jonathan/advert",
+    "description": "creates advert simply and quickly",
+    "authors": [
+        {
+            "name": "jonathan gleyze",
+            "email": "jonasky.nimes@gmail.com"
+        }
+    ],
+    "require": {
+		"php": ">=5.3.0",
+	}
+}
