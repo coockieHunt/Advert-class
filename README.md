@@ -19,6 +19,7 @@ Advert class and a **small tool that quickly and easily allows an advert** creat
 Displays an advert directly :
 
 >>  **Parameter :**
+
 >>*name* = advert name
 
 >> *type* = type of advert ('succes/info/warning/danger')
