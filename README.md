@@ -20,8 +20,11 @@ Displays an advert directly :
 
 >>  **Parameter :**
 >>*name* = advert name
+
 >> *type* = type of advert ('succes/info/warning/danger')
+
 >> *keyword* = keyword of the advert if auto it will display the name of the type
+
 >> *text* = text advert
 
 >$advert->push('*name*', '*type*', '*keyword*', '*text*');
@@ -32,9 +35,13 @@ Displays an advert directly :
 
 Advert to store a session to view the other:
 >> **Parameter :**
+
 >>  *name* = advert name
+
 >> *type* = type of advert ('succes/info/warning/danger')
+
 >> *keyword* = keyword of the advert if auto it will display the name of the type
+
 >> *text* = text advert
 
 >	$advert->push('*name*', '*type*', '*keyword*', '*text*');
@@ -44,10 +51,15 @@ Advert to store a session to view the other:
 #### Add a type of advert.
 
 Creates a new type of advert : 
+
 >> **Parameter :**
+
 >>  name = type name
+
 >> *type* = type of advert ('succes/info/warning/danger')
+
 >> color = hex Color
+
 >> *text* = text advert
 
 >	$advert->addcolor('name','color');
@@ -58,7 +70,9 @@ Creates a new type of advert :
 
 Change style advert : 
 >> **Parameter :**
+
 >>  style = name of style ('round/top')
+
 
 >	$advert->setstyle('style');
 	
