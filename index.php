@@ -14,7 +14,7 @@ $advert = new lib\advert\advert;
 	Usage:
 	- name = type name
 	- color = hex Color
-	- addcolor('name','color')
+	- $advert->addcolor('name','color')
 **/
 $advert->addcolor('admin','#475577');
 
