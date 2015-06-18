@@ -16,7 +16,15 @@ $advert = new lib\advert\advert;
 	- color = hex Color
 	- addcolor('name','color')
 **/
-$advert->addcolor('admin','#2446F2');
+$advert->addcolor('admin','#475577');
+
+/** Change style advert
+	Usage:
+	- style = name of style ('round/top')
+	- $advert->setstyle('style');
+**/
+//$advert->setstyle('round');
+
 
 /** Push advert
 	Usage:
@@ -26,7 +34,7 @@ $advert->addcolor('admin','#2446F2');
 	- text = text advert
 	- $advert->push('name', 'type', 'keyword', 'text');
 **/
-$advert->push('push example', 'info', 'auto', 'puch');
+$advert->push('push example', 'info', 'news', 'neque porro quisquam est qui dolorem ipsum');
 
 
 /**
@@ -46,7 +54,7 @@ session_start();
 	- text = text advert
 	- $advert->session('name', 'type', 'keyword', 'text');
 **/
-$advert->session('session', 'succes', 'admin', 'succes un');
+$advert->session('session', 'admin', 'news', 'quia dolor sit amet, consectetur, adipisci velit');
 
 /** Push session advert
 	Usage:
@@ -55,7 +63,15 @@ $advert->session('session', 'succes', 'admin', 'succes un');
 **/
 $advert->push_session('session');
 
+/** Debug
+	Usage:
+	- $advert->debug();
+**/
+//$advert->debug();
+
+
 ?>
+
 
 <html>
 	<head>
@@ -65,4 +81,12 @@ $advert->push_session('session');
 		<script rel="javascript" type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script rel="javascript" type="text/javascript" src="asset/js/advert.js"></script>
 	</head>
+	<body>
+		<!-- Remove select advert
+			 Usage:
+			 	- name = advert name
+			 	- <a href="#" onclick='advert_hide("name") '> close push exemple</a>
+		-->
+		<a href="#" onclick='advert_hide("push example") '> close push exemple</a>
+	</body>
 </html>

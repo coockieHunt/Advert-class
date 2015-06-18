@@ -9,7 +9,7 @@
 	Athor:
 	- Gleyze Jonathan
 	Release:
-	- 1.0
+	- 1.2
 	Link:
 	- https://github.com/jonasky/Advert-class
 **/
@@ -27,15 +27,19 @@ class advert
 
 	/** Color end theme notification **/
 	private $_color = array(
-		'succes' => '#16E263', 
-		'info' => '#40E6DC', 
-		'warning' => '#EDD75A', 
-		'danger' => '#EDD75A', 
+		'succes' => '#61bd6d', 
+		'info' => '#54acd2', 
+		'warning' => '#fba026', 
+		'danger' => '#d14841', 
 	);
 
 	private $_style = array(
-		'round' => 'notification',
-		'top' =>'notification_two',
+		'round' => 'advert_round',
+		'top' =>'advert_top',
+	);
+
+	private	$_advert_name = array(
+		'error',
 	);
     
 
@@ -58,7 +62,7 @@ class advert
 
 
     public function session($nameadvert, $type, $keyword, $text){
-    	// puch var //
+    	// push var //
     	$this->hydrate($nameadvert, $type, $keyword, $text);
 
     	// if the keyword and automatic it will take the value of the type //
@@ -85,6 +89,14 @@ class advert
 
     /** push advert **/
     public function push($nameadvert, $type, $keyword, $text){
+		
+    	if (!in_array($nameadvert, $this->_advert_name)) {
+			
+			array_push($this->_advert_name, $nameadvert);
+
+		}else{throw new Exception("Cannot redeclare name advert"); die();;}
+
+
 		// puch var //
     	$this->hydrate($nameadvert, $type, $keyword, $text);
 
@@ -101,30 +113,33 @@ class advert
     }
 
     public function push_session($nameadvert){
-    	
-	// adding the suffix to the name of the array//
-    $namesession = 'advert_'.$nameadvert;
+    
+        if (!in_array($nameadvert, $this->_advert_name)) {	
+			array_push($this->_advert_name, $nameadvert);
+		}else{throw new Exception("Cannot redeclare name advert"); die();;}
 
-    if (isset($_SESSION[$namesession])) {
+
+		// adding the suffix to the name of the array//
+    	$namesession = 'advert_'.$nameadvert;
+
+   		if (isset($_SESSION[$namesession])) {
 	 		// hydrate function //
-    		$this->hydrate($_SESSION[$namesession]['name'], $_SESSION[$namesession]['type'], $_SESSION[$namesession]['keyword'], $_SESSION[$namesession]['text']);
+   				$this->hydrate($_SESSION[$namesession]['name'], $_SESSION[$namesession]['type'], $_SESSION[$namesession]['keyword'], $_SESSION[$namesession]['text']);
 		
-    		// if the keyword and automatic it will take the value of the type //
-    		if ($_SESSION[$namesession]['keyword'] == 'auto') {
-    			$this->set_keyword($this->get_type());
-    		}
+   				// if the keyword and automatic it will take the value of the type //
+   				if ($_SESSION[$namesession]['keyword'] == 'auto') {
+   					$this->set_keyword($this->get_type());
+   				}
 		
-    		//apply color compared to Type //
-    		$this->set_type($this->_color[$this->get_type()]);
+   				//apply color compared to Type //
+   				$this->set_type($this->_color[$this->get_type()]);
 	
-    		// push advert //
-    		$this->initmodel($_SESSION[$namesession]['name'], $_SESSION[$namesession]['type'], $_SESSION[$namesession]['keyword'], $_SESSION[$namesession]['text']);
+   				// push advert //
+   				$this->initmodel($_SESSION[$namesession]['name'], $_SESSION[$namesession]['type'], $_SESSION[$namesession]['keyword'], $_SESSION[$namesession]['text']);
 	
-    		// delete array //
-    		unset($_SESSION[$namesession]);
-    	}else{throw new Exception('Not Found advert'); die();}
-
-    	
+   				// delete array //
+   				unset($_SESSION[$namesession]);
+   		}else{throw new Exception('Not Found advert'); die();}
     }
 
 
@@ -171,11 +186,14 @@ class advert
 	/** debug function **/
 	public function debug(){
 		$array = $this->get_color();
+		
 		foreach ($array as $key => $value) {
 			echo "nom = ". $key . " couleur = " . $value . "<br>";
 		}
 
 		var_dump($_SESSION);
+
+		var_dump($this->_advert_name);
 
 		echo "<br>";
 		echo "type = ". $this->get_type()."<br>";
@@ -217,6 +235,10 @@ class advert
 
 	private function get_style_array($key){
 		return $this->_style[$key];
+	}
+
+	private function get_name_array($key){
+		return $this->_advert_name[$key];
 	}
 
 	/** set **/

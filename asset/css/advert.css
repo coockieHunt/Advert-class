@@ -9,8 +9,23 @@ body{
 	margin: 0; padding: 0;
 }
 
+a{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+
+/*====================================
+*              style = round
+=====================================*/
+
 /* Notification main background box */
-.notification{
+.advert_round{
 	height: 50px;
 	width: 95%;
 	border-radius: 5px;
@@ -22,13 +37,13 @@ body{
 	opacity: 1.0;
 }
 
-.notification > strong{
+.advert_round > strong{
 	font-size: 	1.2em;
 	font-family: 'Open Sans';
 	padding-left: 	10px;
 }
 
-.notification >.advert{
+.advert_round >.advert{
 	float: 	right;
 	line-height: 50px;
 	margin-right: 20px;
@@ -37,11 +52,16 @@ body{
 	height: 50px;
 	margin:16px 25px 0 0;
 	cursor: pointer;
-	
 }
 
+.advert_round >.advert:hover{
+	font-size: 	1.1em;
+}
 
-.notification_two{
+/*====================================
+*              style = top round
+=====================================*/
+.advert_top{
 	height: 50px;
 	width: 100%;
 	line-height: 50px;
@@ -49,13 +69,13 @@ body{
 	float: 	left;
 }
 
-.notification_two > strong{
+.advert_top > strong{
 	font-size: 	1.2em;
 	font-family: 'Open Sans';
 	padding-left: 	10px;
 }
 
-.notification_two >.advert{
+.advert_top >.advert{
 	float: 	right;
 	line-height: 50px;
 	margin-right: 20px;
@@ -65,4 +85,8 @@ body{
 	margin:16px 25px 0 0;
 	cursor: pointer;
 	
+}
+
+.advert_top >.advert:hover{
+	font-size: 	1.1em;
 }
