@@ -8,11 +8,22 @@ Documents
 Advert class and a **small tool that quickly and easily allows an advert** created with some option
 
 > **USING:**
-
+> - Install.
 > - Display an advert.
 > - Store in the session an advert.
 > - Add a type of advert.
 > - Choose themed advert.
+
+#### Install
+include file lib/advert.class.php.
+
+    include_once('lib/advert.class.php'); 
+
+instance class
+	
+
+    $advert = new lib\advert\advert;
+
 
 #### Display an advert.
 
@@ -78,3 +89,4 @@ Create new theme
 -------------
  1. edit file asset/css/advert.css
  2. add lib/advert.class.php in  array $_style name of theme en main class css
+
