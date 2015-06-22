@@ -35,6 +35,7 @@ $advert->addcolor('admin','#475577');
 	- $advert->push('name', 'type', 'keyword', 'text');
 **/
 $advert->push('push example', 'info', 'news', 'neque porro quisquam est qui dolorem ipsum');
+$advert->push('test', 'danger', 'atention', 'neque porro quisquam est qui dolorem ipsum');
 
 
 /**

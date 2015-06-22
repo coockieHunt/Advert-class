@@ -60,7 +60,14 @@ class advert
 	}
 
 
-
+	/**
+	 * [Storing a advert session]
+	 * @param  [string] $nameadvert [id of advert]
+	 * @param  [string] $type [type of advert (succes = green/ info= blue / etc.)]
+	 * @param  [string] $keyword [dysplay advert keyword, if 'auto' then keyword]
+	 * @param  [$text] $text [dysplay advert keyword, if 'auto' then keyword]
+	 * @return [$this] [store data]
+	 */
     public function session($nameadvert, $type, $keyword, $text){
     	// push var //
     	$this->hydrate($nameadvert, $type, $keyword, $text);
@@ -87,9 +94,17 @@ class advert
     	}else{throw new Exception('find no session : http://php.net/manual/en/session.examples.basic.php'); die();}
     }
 
-    /** push advert **/
+    /**
+	 * [Dysplay a advert]
+	 * @param  [string] $nameadvert [id of advert]
+	 * @param  [string] $type [type of advert (succes = green/ info= blue / etc.)]
+	 * @param  [string] $keyword [dysplay advert keyword, if 'auto' then keyword]
+	 * @param  [$text] $text [dysplay advert keyword, if 'auto' then keyword]
+	 * @return [$this] [Dysplay a advert]
+	 */
     public function push($nameadvert, $type, $keyword, $text){
 		
+		// add name array check //
     	if (!in_array($nameadvert, $this->_advert_name)) {
 			
 			array_push($this->_advert_name, $nameadvert);
@@ -97,7 +112,7 @@ class advert
 		}else{throw new Exception("Cannot redeclare name advert"); die();;}
 
 
-		// puch var //
+		// push var //
     	$this->hydrate($nameadvert, $type, $keyword, $text);
 
     	// if the keyword and automatic it will take the value of the type //
@@ -112,6 +127,11 @@ class advert
     	$this->initmodel($nameadvert, $type, $keyword, $text);
     }
 
+    /**
+	 * [push a advert store session]
+	 * @param  [string] $nameadvert [id of advert]
+	 * @return [$this] [Dysplay a advert]
+	 */
     public function push_session($nameadvert){
     
         if (!in_array($nameadvert, $this->_advert_name)) {	
@@ -143,7 +163,14 @@ class advert
     }
 
 
-    /** Sending variable **/
+    /**
+	 * [Sending variable]
+	 * @param  [string] $nameadvert [id of advert]
+	 * @param  [string] $type [type of advert (succes = green/ info= blue / etc.)]
+	 * @param  [string] $keyword [dysplay advert keyword, if 'auto' then keyword]
+	 * @param  [$text] $text [dysplay advert keyword, if 'auto' then keyword]
+	 * @return [$this] [hydrate a function]
+	 */
 	private function hydrate($nameadvert, $type, $keyword, $text){
 		$this->set_name($nameadvert);
 		$this->set_type(lcfirst($type));
@@ -151,7 +178,14 @@ class advert
 		$this->set_text(ucfirst($text));
 	}
 
-	/** appearance of advert */
+	/**
+	 * [appearance of advert]
+	 * @param  [string] $nameadvert [id of advert]
+	 * @param  [string] $type [type of advert (succes = green/ info= blue / etc.)]
+	 * @param  [string] $keyword [dysplay advert keyword, if 'auto' then keyword]
+	 * @param  [$text] $text [dysplay advert keyword, if 'auto' then keyword]
+	 * @return [$this] [dysplay advert]
+	 */
 	private function initmodel($nameadvert, $type, $keyword, $text){
 		// snipet var //
 		$name = '"'.$this->get_name().'"';
@@ -161,7 +195,12 @@ class advert
 		<span href='' class='advert' id='" . $this->get_name() . "' onclick='advert_hide(". $name .")'><i class='fa fa-times'></i></span></div>";
 	}
 
-	/** Add a notification color */
+	/**
+	 * [Add a notification color]
+	 * @param  [string] $name [name of type]
+	 * @param  [string] $addcolor [color HEX]
+	 * @return [$this] [set new color "type"]
+	 */
 	public function addcolor($name, $addcolor){
 		// Check whether the information is valid //
 		if (preg_match('/#([a-fA-F0-9]{3}){1,2}\b/', $addcolor) && preg_match("/^[a-zA-Z]+$/", $name)) {
@@ -173,6 +212,11 @@ class advert
 	}
 
 	/** Set style */
+	/**
+	 * [Set style]
+	 * @param  [string] $name [name of type]
+	 * @return [$this] [set new color "style"]
+	 */
 	public function setstyle($name){
 		// Check whether the information is valid //
 		if (array_key_exists($name, $this->_style)) {
