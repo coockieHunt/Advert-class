@@ -5,13 +5,12 @@
 ====================================*/
 
 /**
-
-	Athor:
-	- Gleyze Jonathan
-	Release:
-	- 1.2
-	Link:
-	- https://github.com/jonasky/Advert-class
+*	Athor:
+*	- Gleyze Jonathan
+*	Release:
+*	- 1.2
+*	Link:
+*	- https://github.com/jonasky/Advert-class
 **/
 
 
