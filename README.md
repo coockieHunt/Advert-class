@@ -1,6 +1,6 @@
 Getting started
 ===================
-Hey! A Simple, Flexible and Beautiful class advert
+Hey! A Simple class advert
 
 Documents
 -------------
