@@ -90,7 +90,7 @@ Create new theme
  1. edit file asset/css/advert.css
  2. add lib/advert.class.php in  array $_style name of theme en main class css.
  
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JSZDHLDMGPVPG" rel="some text">![Foo](https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donate_SM.gif)]</a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JSZDHLDMGPVPG" rel="some text">![Foo](https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donate_SM.gif)</a>
  
  
 
