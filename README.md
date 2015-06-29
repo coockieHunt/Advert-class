@@ -90,7 +90,7 @@ Create new theme
  1. edit file asset/css/advert.css
  2. add lib/advert.class.php in  array $_style name of theme en main class css.
  
-https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JSZDHLDMGPVPG
+<a href="http://google.com.au/" rel="some text">![Foo](http://www.google.com.au/images/nav_logo7.png)]</a>
  
  
 
